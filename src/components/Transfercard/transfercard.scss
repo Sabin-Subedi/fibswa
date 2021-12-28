@@ -1,0 +1,34 @@
+.transfer_card {
+  position: relative;
+
+  .transfer_card_item {
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    mix-blend-mode: overlay;
+    border-radius: 10px;
+  }
+
+  .icon {
+    max-width: 3rem;
+  }
+
+  .loss_text {
+    color: #fc5c65;
+  }
+  .gain_text {
+    color: #02e1ba;
+  }
+
+  .text-sm {
+    font-size: 0.8rem;
+  }
+}

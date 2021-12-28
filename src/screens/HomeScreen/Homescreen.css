@@ -1,0 +1,25 @@
+.card_icon_placement {
+  top: -51%;
+  transform: translateY(70%);
+}
+
+.help_card_blur {
+  /* backdrop-filter: blur(500px) !important; */
+  background: #06132a;
+}
+
+.rainbow_border {
+  border-image: linear-gradient(
+      64deg,
+      #46ebe3 16.26%,
+      #45aaf2 33.77%,
+      #20bf6b 50.57%,
+      #fa8231 67.37%,
+      #eb3b5a 83.48%
+    )
+    1 !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  opacity: 1 !important;
+  border-radius: 2px !important;
+}

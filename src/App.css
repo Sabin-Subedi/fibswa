@@ -1,0 +1,36 @@
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: transparent;
+    box-shadow: none;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+    box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #1090BA;
+    box-shadow: none;
+}
+
+
+
+.heroContainer{
+    padding: 0 5%;
+}
+
+.heroSection{
+    min-height: 110vh;
+    padding-top: 50px;
+}
+.paraContent{
+    max-width:700px;
+    margin-left:auto;
+    margin-right: auto;
+}
