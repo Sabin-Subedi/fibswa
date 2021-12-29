@@ -1,0 +1,128 @@
+.select_control {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.select_item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .select_item_img {
+    max-width: 3rem;
+    z-index: 1;
+  }
+
+  &.active {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      mix-blend-mode: overlay;
+      opacity: 0.35;
+      border-radius: 8px;
+    }
+
+    .select_item_circle {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: linear-gradient(45deg, #3796e5 0%, #46ece3 100%);
+      }
+    }
+  }
+
+  .select_item_circle {
+    position: relative;
+    width: 1.3rem;
+    height: 1.3rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      mix-blend-mode: overlay;
+      opacity: 0.35;
+      border-radius: 50%;
+    }
+  }
+}
+
+.select_modal {
+  .modal-content {
+    background: linear-gradient(161.19deg, #0c55ab -0.1%, #051d46 105.99%);
+
+    .border {
+      mix-blend-mode: overlay;
+      height: 1px;
+    }
+
+    .select_searchBox {
+      position: relative;
+      padding: 0.4rem 0.5rem;
+      border-radius: 0.4rem;
+      overflow: hidden;
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+
+      .select_search_input {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        color: #fff !important;
+        z-index: 1;
+      }
+      .select_search_input::placeholder {
+        color: #fff !important;
+        opacity: 0.8;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        mix-blend-mode: overlay;
+        opacity: 0.5;
+        opacity: 0.5;
+      }
+    }
+
+    .select_options {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+  }
+}

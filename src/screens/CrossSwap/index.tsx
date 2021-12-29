@@ -5,74 +5,47 @@ import { FiChevronDown, FiClipboard } from "react-icons/fi";
 import NavigationBar from "../../components/Navbar";
 import SwapIcon from "../../vectors/Icons/SwapIcon";
 import "./crosswap.scss";
-
-import Select, { StylesConfig } from "react-select";
 import HistoryModal from "./HistoryModal";
+import Select from "components/Select";
 interface Props {}
 
-const option = [
+const items = [
   {
-    value: "eth",
-    label: (
-      <div className="option d-flex align-items-center">
-        <div className="me-2 " style={{ maxWidth: "30px" }}>
-          <img src="/icons/eth.png" className="w-full" alt="eth" />
-        </div>
-        <div className="option-label">ETH</div>
-      </div>
-    ),
+    label: "BNB",
+    subLabel: "Binance Token",
+    value: "BNB",
+    image: "/icons/bnb.png",
+    icon: "",
   },
   {
-    value: "et",
-    label: (
-      <div className="option d-flex align-items-center">
-        <div className="me-2 " style={{ maxWidth: "30px" }}>
-          <img src="/icons/bnb.png" className="w-full" alt="eth" />
-        </div>
-        <div className="option-label">BNB</div>
-      </div>
-    ),
+    label: "ETH",
+    subLabel: "Etherneum",
+    value: "BNB",
+    image: "/icons/eth.png",
+    icon: "",
+  },
+  {
+    label: "DOGE",
+    subLabel: "DogeCoin",
+    value: "Doge",
+    image: "/icons/doge.png",
+    icon: "",
+  },
+  {
+    label: "FIL",
+    subLabel: "Binance-Peg Filecoin",
+    value: "FIL",
+    image: "/icons/fil.png",
+    icon: "",
+  },
+  {
+    label: "bwJUP",
+    subLabel: "Jupiter",
+    value: "jupiter",
+    image: "/icons/jupiter.png",
+    icon: "",
   },
 ];
-
-const selectStyles: StylesConfig = {
-  control: (styles, states) => ({
-    ...styles,
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
-    color: "#ffffff",
-    opacity: 1,
-    outline: "none",
-    border: states.menuIsOpen ? "none" : "none",
-    borderColor: states.menuIsOpen ? "none" : "none",
-    boxShadow: states.menuIsOpen ? "none" : "none",
-    padding: "0.5rem 0",
-  }),
-  menu: (styles) => ({
-    ...styles,
-    backgroundColor: "rgba(255, 255, 255, 0.05)",
-  }),
-  placeholder: (styles) => ({
-    ...styles,
-    color: "white",
-  }),
-  singleValue: (styles) => ({
-    ...styles,
-    color: "white",
-  }),
-  dropdownIndicator: (styles) => ({
-    ...styles,
-    color: "white",
-  }),
-  indicatorSeparator: (styles) => ({
-    display: "none",
-  }),
-  option: (provided, state) => ({
-    ...provided,
-    backgroundColor: state.isSelected
-      ? "rgba(255, 255, 255, 0.1)"
-      : "rgba(255, 255, 255, 0.05)",
-  }),
-};
 
 const CrossSwap: React.FC<Props> = () => {
   const [showHistory, setShowHistory] = useState(false);
@@ -112,10 +85,10 @@ const CrossSwap: React.FC<Props> = () => {
               <h6 className="mb-0 me-1  fs-6">Transactions </h6>
               <FiChevronDown className="fs-6" />
             </div>
-            <Row xs={1} md={2} className="align-items-center">
-              <Col className="inner_swap_card_item ">
+            <Row xs={1} md={3} className="align-items-center">
+              <Col className="inner_swap_card_item flex-grow-1">
                 <div className="d-flex px-3 pt-3 pb-1 border-bottom border-secondary">
-                  <Form.Group className="flex-grow-md-1">
+                  <Form.Group className="flex-grow-1">
                     <p className="mb-0 opacity-75 fs-6 fw-light">From</p>
                     <Form.Control
                       style={{ zIndex: 10 }}
@@ -129,13 +102,7 @@ const CrossSwap: React.FC<Props> = () => {
                   <Form.Group className="d-flex align-items-center">
                     <p className="mb-0 me-2">Max</p>
 
-                    <Select
-                      defaultValue={option[0]}
-                      isSearchable={false}
-                      className="swap_select"
-                      styles={selectStyles}
-                      options={option}
-                    />
+                    <Select options={items} />
                   </Form.Group>
                 </div>
                 <div className="d-flex align-items-center px-3 pt-3 pb-1 ">
@@ -157,11 +124,11 @@ const CrossSwap: React.FC<Props> = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={1} className="d-flex justify-content-center">
+              <Col xs={1} md={1} className="d-flex justify-content-center">
                 <SwapIcon />
               </Col>
 
-              <Col className="inner_swap_card_item ">
+              <Col className="inner_swap_card_item flex-grow-1">
                 <div className="d-flex px-3 pt-3 pb-1 border-bottom border-secondary">
                   <Form.Group className="flex-grow-1">
                     <p className="mb-0 opacity-75 fs-6 fw-light">From</p>
@@ -177,13 +144,7 @@ const CrossSwap: React.FC<Props> = () => {
                   <Form.Group className="d-flex align-items-center">
                     <p className="mb-0 me-2">Max</p>
 
-                    <Select
-                      defaultValue={option[1]}
-                      isSearchable={false}
-                      className="swap_select"
-                      styles={selectStyles}
-                      options={option}
-                    />
+                    <Select options={items} defaultValue={items[1]} />
                   </Form.Group>
                 </div>
                 <div className="d-flex align-items-center px-3 pt-3 pb-1 ">
@@ -218,7 +179,7 @@ const CrossSwap: React.FC<Props> = () => {
 
           <div className="inner_swap_card mt-5 p-4">
             <Row className="">
-              <Col lg={4} className="video_item">
+              <Col lg={5} className="video_item">
                 <iframe
                   className="h-full w-full"
                   src="https://www.youtube.com/embed/z7538iNe2Pw"
