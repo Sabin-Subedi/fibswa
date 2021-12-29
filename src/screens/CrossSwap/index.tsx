@@ -118,9 +118,15 @@ const CrossSwap: React.FC<Props> = () => {
                     />
                   </Form.Group>
                   <div>
-                    <div className="icon_container">
-                      <FiClipboard className="fs-4" />
-                    </div>
+                    <Select
+                      options={items}
+                      defaultValue={null}
+                      className="d-none"
+                    >
+                      <div className="icon_container">
+                        <FiClipboard className="fs-4" />
+                      </div>
+                    </Select>
                   </div>
                 </div>
               </Col>
@@ -160,9 +166,15 @@ const CrossSwap: React.FC<Props> = () => {
                     />
                   </Form.Group>
                   <div>
-                    <div className="icon_container">
-                      <FiClipboard className="fs-4" />
-                    </div>
+                    <Select
+                      options={items}
+                      defaultValue={null}
+                      className="d-none"
+                    >
+                      <div className="icon_container">
+                        <FiClipboard className="fs-4" />
+                      </div>
+                    </Select>
                   </div>
                 </div>
               </Col>

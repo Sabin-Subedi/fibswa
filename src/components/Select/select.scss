@@ -5,8 +5,21 @@
   cursor: pointer;
   font-size: 1rem;
 
+  .select_control_icon {
+    max-width: 2rem;
+  }
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (max-width: 47rem) {
+  .select_control {
+    padding: 0.4rem;
+    .select_control_icon {
+      max-width: 15rem;
+    }
   }
 }
 

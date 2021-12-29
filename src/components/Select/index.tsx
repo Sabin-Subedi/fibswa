@@ -14,6 +14,7 @@ import SelectItem from "./SelectItem";
 interface Props {}
 
 function SelectModal(props) {
+  console.log(props.onHide);
   return (
     <Modal
       {...props}
@@ -24,12 +25,12 @@ function SelectModal(props) {
       <Modal.Header className="d-flex border-0">
         <div className="d-flex align-items-center text-white fs-3">
           <FiBox />
-          <p className="mb-0 ms-1 fw-bolder">Transfer History</p>
+          <p className="mb-0 ms-1 fw-bolder">Select Token</p>
         </div>
         <button
           className="btn text-white"
           style={{ zIndex: 10 }}
-          onClick={props.onHide}
+          onClick={() => props.onHide()}
         >
           <FiX className="fs-1" />
         </button>
@@ -68,9 +69,15 @@ function SelectModal(props) {
 export default function Select({
   options,
   defaultValue,
+
+  className,
+  children,
 }: {
   options: any[];
   defaultValue?: any;
+  className?: string;
+
+  children?: React.ReactNode;
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
@@ -80,13 +87,13 @@ export default function Select({
   return (
     <>
       <div
-        className="select_control  d-flex align-items-center justify-content-between"
+        className={`select_control  d-flex align-items-center justify-content-between ${className}`}
         onClick={() => setModalVisible(true)}
       >
         <div className="option d-flex align-items-center me-1">
           {selectedItem ? (
             <>
-              <div className="me-2 " style={{ maxWidth: "25px" }}>
+              <div className="me-2 select_control_icon flex-grow-1">
                 <Image
                   src={selectedItem.image}
                   className="w-full"
@@ -112,6 +119,7 @@ export default function Select({
         selectItem={(item) => setSelectedItem(item)}
         selectedItem={selectedItem}
       />
+      {children && <div onClick={() => setModalVisible(true)}>{children}</div>}
     </>
   );
 }
