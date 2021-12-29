@@ -81,34 +81,41 @@ const CrossSwap: React.FC<Props> = () => {
     <div>
       <NavigationBar />
       <Container className="mt-5">
-        <Card className="col-12 swap_card p-5">
-          <Row className="align-items-center">
-            <Col>
-              <h2 className="gradient_light gradient_text d-inline-block text-uppercase ">
+        <Card className="col-12 swap_card p-3 py-5 p-md-5">
+          <Row xs={1} md={2} className="align-items-center ">
+            <Col xs={12} md={6} className="d-flex d-md-block">
+              <h2 className="gradient_light gradient_text d-inline-block text-uppercase mx-auto">
                 Bsc Swap
               </h2>
             </Col>
-            <Col className="d-flex justify-content-end">
-              <div className="text-white d-inline-flex rounded-pill ms-auto overflow-hidden  menu ">
-                <p className="active mb-0 p-2 ps-3">Cross Swap</p>
-                <p className=" mb-0 p-2">BSC Swap</p>
-                <p className=" mb-0 p-2" onClick={() => setShowHistory(true)}>
+            <Col
+              xs={12}
+              md={6}
+              className="d-flex justify-content-center justify-content-md-end"
+            >
+              <div className="text-white d-inline-flex rounded-pill  overflow-hidden  menu ">
+                <p className="active mb-0 p-1 p-md-2 fs-7 ps-3">Cross Swap</p>
+                <p className=" mb-0 p-1 p-md-2 fs-7">BSC Swap</p>
+                <p
+                  className=" mb-0 p-1 p-md-2 fs-7"
+                  onClick={() => setShowHistory(true)}
+                >
                   History
                 </p>
-                <p className=" mb-0 p-2 pe-3">ETH Swap</p>
+                <p className=" mb-0 p-1 p-md-2 fs-7 pe-3">ETH Swap</p>
               </div>
             </Col>
           </Row>
 
-          <Form className="inner_swap_card p-5 text-white mt-5">
-            <div className="d-flex align-items-center mb-2">
-              <h6 className="mb-0 me-1 fs-6">Transactions </h6>
+          <Form className="inner_swap_card p-4 p-md-5 text-white mt-5">
+            <div className="d-flex align-items-center mb-4 mb-md-2">
+              <h6 className="mb-0 me-1  fs-6">Transactions </h6>
               <FiChevronDown className="fs-6" />
             </div>
-            <Row className="align-items-center">
+            <Row xs={1} md={2} className="align-items-center">
               <Col className="inner_swap_card_item ">
                 <div className="d-flex px-3 pt-3 pb-1 border-bottom border-secondary">
-                  <Form.Group className="flex-grow-1">
+                  <Form.Group className="flex-grow-md-1">
                     <p className="mb-0 opacity-75 fs-6 fw-light">From</p>
                     <Form.Control
                       style={{ zIndex: 10 }}
@@ -200,7 +207,7 @@ const CrossSwap: React.FC<Props> = () => {
               </Col>
             </Row>
 
-            <div className="col-5 mx-auto mt-5">
+            <div className="col-10 col-md-5 mx-auto mt-5">
               <button className="swap_button mx-auto py-2">
                 <p className="d-inline-block gradient_light gradient_text fw-bold mb-0">
                   START SWAP

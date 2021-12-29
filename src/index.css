@@ -155,3 +155,7 @@ code {
 .footerlogo {
   max-height: 100px;
 }
+
+.fs-7 {
+  font-size: 0.8rem;
+}
